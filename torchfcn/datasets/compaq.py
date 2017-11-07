@@ -19,13 +19,10 @@ class COMPAQSkinSeg(data.Dataset):
 		dataset_dir = osp.join(self.root, 'CompaqSkinDataset')
 		self.files = collections.defaultdict(list)
 
-		import pdb
-		pdb.set_trace()
-
 		for split in ['train', 'val']:
 			imgsets_file = osp.join(dataset_dir, '%s.txt'%split)
 			for did in open(imgsets_file):
-				did = did.strip()
+				did = did.strip().split('\t')
 				img_file, lbl_file = did
 				img_file = osp.join(dataset_dir, 'skin-images/%s'%img_file)
 				lbl_file = osp.join(dataset_dir, 'masks/%s'%lbl_file)
