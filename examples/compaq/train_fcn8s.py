@@ -53,7 +53,7 @@ def main():
     # 1. dataset
 
     root = osp.expanduser('~/data/datasets')
-    kwargs = {'num_workers': 4, 'pin_memory': True} if cuda else {}
+    kwargs = {'num_workers': 1, 'pin_memory': True} if cuda else {}
     train_loader = torch.utils.data.DataLoader(
         torchfcn.datasets.compaq.COMPAQSkinSeg(root, split='train', transform=True),
         batch_size=1, shuffle=True, **kwargs)
