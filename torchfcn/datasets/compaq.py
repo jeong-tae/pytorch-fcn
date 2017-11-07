@@ -11,13 +11,17 @@ class COMPAQSkinSeg(data.Dataset):
 	class_names = np.array(['non-skin', 'skin'])
 	mean_bgr = np.array([127, 127, 127]) # Not computed yet
 
-	def __init__(self, root, split = 'train', trainsform=False):
+	def __init__(self, root, split = 'train', transform=False):
 		self.root = root
 		self.split = split
-		self._trainform = trainsform
+		self._transform = transform
 		
 		dataset_dir = osp.join(self.root, 'CompaqSkinDataset')
 		self.files = collections.defaultdict(list)
+
+		import pdb
+		pdb.set_trace()
+
 		for split in ['train', 'val']:
 			imgsets_file = osp.join(dataset_dir, '%s.txt'%split)
 			for did in open(imgsets_file):
