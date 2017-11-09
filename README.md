@@ -5,6 +5,9 @@
 
 Fully Convolutional Networks implemented with PyTorch.
 
+## Fork
+
+This repository is forked repo for Skin segmentation. This will include new dataloader for COMPAQ[paper]() dataset which consist with skin annotated dataset.
 
 ## Requirements
 
